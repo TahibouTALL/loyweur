@@ -8,22 +8,29 @@
   <script defer src="script.js"></script>
 </head>
 <body>
-  <header>
-    <div class="nav-container">
+  <!--
+    Site header inspired by the French classifieds platform Leboncoin.
+    It combines the logo with a two‑field search bar (query and location)
+    and a prominent search button. The color palette and layout borrow
+    from the original site while adapting wording and currency to
+    Senegalese users.
+  -->
+  <header class="site-header">
+    <div class="header-container">
       <a href="index.html" class="logo">
         <img src="logo.png" alt="Logo Loyweur">
+        <span class="logo-text">Loyweur</span>
       </a>
-      <input type="text" id="search-input" placeholder="Rechercher une annonce…" oninput="handleSearch()">
+      <div class="search-bar">
+        <input type="text" id="search-input" placeholder="Que recherchez-vous ?" oninput="handleSearch()">
+        <input type="text" id="location-input" placeholder="Où ?" oninput="handleSearch()">
+        <button type="button" id="search-button" onclick="handleSearch()">Rechercher</button>
+      </div>
     </div>
   </header>
 
-  <section class="hero">
-    <h1>Bienvenue sur Loyweur</h1>
-    <p>Achetez et vendez près de chez vous au Sénégal.</p>
-  </section>
-
   <section class="categories-section">
-    <h2>Catégories populaires</h2>
+    <h2>Découvrez nos catégories</h2>
     <div class="categories">
       <div class="category-card" data-category="vehicles" onclick="selectCategory('vehicles')">
         <span class="icon">🚗</span>
