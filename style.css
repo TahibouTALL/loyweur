@@ -21,31 +21,77 @@ body {
   line-height: 1.5;
 }
 
-header {
-  background-color: var(--primary);
-  color: #ffffff;
+/*
+  Header and search bar styles. The header is inspired by Leboncoin's
+  minimalist bar: white background, subtle shadow and an orange accent
+  for the call‑to‑action button. Two inputs (query and location) share
+  the same bar separated by a divider.
+*/
+.site-header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
   padding: 10px 20px;
   position: sticky;
   top: 0;
   z-index: 100;
 }
 
-.nav-container {
+.header-container {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 20px;
 }
 
-.nav-container .logo img {
+/* Logo image plus text */
+.logo img {
   height: 40px;
 }
 
-.nav-container #search-input {
+.logo-text {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--primary);
+  margin-left: 8px;
+}
+
+/* Search bar containing two inputs and a button */
+.search-bar {
   flex: 1;
-  max-width: 600px;
-  padding: 8px 12px;
-  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  background-color: #f5f5f5;
+  border-radius: 6px;
+  padding: 5px;
+  max-width: 800px;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 8px 10px;
   border: none;
+  background: transparent;
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.search-bar input:not(:last-child) {
+  border-right: 1px solid #dddddd;
+}
+
+.search-bar button {
+  padding: 8px 16px;
+  background-color: var(--primary);
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 8px;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+}
+
+.search-bar button:hover {
+  background-color: var(--secondary);
 }
 
 .hero {
@@ -80,34 +126,44 @@ header {
   gap: 20px;
 }
 
+/* Category cards: simple tiles with icon and label. On hover
+   they gently raise and change border color; when active,
+   they adopt the primary color for background and white text. */
 .category-card {
   background-color: var(--card-bg);
+  border: 1px solid #e0e0e0;
   border-radius: 8px;
   padding: 20px 10px;
   text-align: center;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  transition: transform 0.2s, background-color 0.2s, color 0.2s;
+  transition: transform 0.2s, border-color 0.2s, background-color 0.2s, color 0.2s;
 }
 
 .category-card:hover {
   transform: translateY(-4px);
+  border-color: var(--primary);
 }
 
 .category-card.active {
   background-color: var(--primary);
   color: #ffffff;
+  border-color: var(--primary);
 }
 
 .category-card .icon {
-  font-size: 32px;
-  margin-bottom: 10px;
+  font-size: 36px;
+  margin-bottom: 8px;
+  color: var(--primary);
   display: block;
 }
 
+.category-card.active .icon {
+  color: #ffffff;
+}
+
 .category-card .label {
-  font-size: 0.95rem;
-  font-weight: bold;
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 
 .ads-section {
