@@ -92,15 +92,17 @@ function displayAds() {
   const container = document.getElementById("ads-container");
   if (!container) return;
   const searchInput = document.getElementById("search-input");
+  const locationInput = document.getElementById("location-input");
   const query = searchInput ? searchInput.value.toLowerCase().trim() : "";
-  // Filtre les annonces selon la catégorie et la recherche
+  const locationQuery = locationInput ? locationInput.value.toLowerCase().trim() : "";
+  // Filtre les annonces selon la catégorie, la recherche textuelle et la localisation
   const filtered = ads.filter(ad => {
     const matchesCategory = !currentCategory || ad.category === currentCategory;
-    const matchesQuery =
+    const matchesText =
       ad.title.toLowerCase().includes(query) ||
-      ad.description.toLowerCase().includes(query) ||
-      ad.location.toLowerCase().includes(query);
-    return matchesCategory && matchesQuery;
+      ad.description.toLowerCase().includes(query);
+    const matchesLocation = !locationQuery || ad.location.toLowerCase().includes(locationQuery);
+    return matchesCategory && matchesText && matchesLocation;
   });
   // Reset du contenu
   container.innerHTML = "";
