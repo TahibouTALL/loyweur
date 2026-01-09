@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loyweur – Petites annonces au Sénégal</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <img src="logo.png" alt="Logo Loyweur">
+      </a>
+      <input type="text" id="search-input" placeholder="Rechercher une annonce…" oninput="handleSearch()">
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>Bienvenue sur Loyweur</h1>
+    <p>Achetez et vendez près de chez vous au Sénégal.</p>
+  </section>
+
+  <section class="categories-section">
+    <h2>Catégories populaires</h2>
+    <div class="categories">
+      <div class="category-card" data-category="vehicles" onclick="selectCategory('vehicles')">
+        <span class="icon">🚗</span>
+        <span class="label">Véhicules</span>
+      </div>
+      <div class="category-card" data-category="real_estate" onclick="selectCategory('real_estate')">
+        <span class="icon">🏠</span>
+        <span class="label">Immobilier</span>
+      </div>
+      <div class="category-card" data-category="multimedia" onclick="selectCategory('multimedia')">
+        <span class="icon">📱</span>
+        <span class="label">Multimédia</span>
+      </div>
+      <div class="category-card" data-category="home_garden" onclick="selectCategory('home_garden')">
+        <span class="icon">🛋️</span>
+        <span class="label">Maison &amp; Jardin</span>
+      </div>
+      <div class="category-card" data-category="leisure" onclick="selectCategory('leisure')">
+        <span class="icon">⚽</span>
+        <span class="label">Loisirs</span>
+      </div>
+      <div class="category-card" data-category="fashion" onclick="selectCategory('fashion')">
+        <span class="icon">👗</span>
+        <span class="label">Mode</span>
+      </div>
+      <div class="category-card" data-category="jobs" onclick="selectCategory('jobs')">
+        <span class="icon">💼</span>
+        <span class="label">Emploi</span>
+      </div>
+      <div class="category-card" data-category="agriculture" onclick="selectCategory('agriculture')">
+        <span class="icon">🌱</span>
+        <span class="label">Agriculture</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="ads-section">
+    <h2>Annonces récentes</h2>
+    <div id="ads-container" class="ads-container">
+      <!-- Les annonces seront insérées par JavaScript -->
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Loyweur</p>
+  </footer>
+</body>
+</html>

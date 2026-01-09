@@ -1,0 +1,235 @@
+/* Styles pour Loyweur – plateforme de petites annonces */
+:root {
+  --primary: #ff6f00;
+  --secondary: #ffa726;
+  --accent: #2e7d32;
+  --bg: #f9f9f9;
+  --card-bg: #ffffff;
+  --text: #333333;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+header {
+  background-color: var(--primary);
+  color: #ffffff;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.nav-container .logo img {
+  height: 40px;
+}
+
+.nav-container #search-input {
+  flex: 1;
+  max-width: 600px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: none;
+}
+
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(180deg, var(--primary), var(--secondary));
+  color: #ffffff;
+}
+
+.hero h1 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.1rem;
+}
+
+.categories-section {
+  padding: 40px 20px;
+}
+
+.categories-section h2 {
+  text-align: center;
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+}
+
+.categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 20px;
+}
+
+.category-card {
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  padding: 20px 10px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s, color 0.2s;
+}
+
+.category-card:hover {
+  transform: translateY(-4px);
+}
+
+.category-card.active {
+  background-color: var(--primary);
+  color: #ffffff;
+}
+
+.category-card .icon {
+  font-size: 32px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.category-card .label {
+  font-size: 0.95rem;
+  font-weight: bold;
+}
+
+.ads-section {
+  padding: 40px 20px;
+}
+
+.ads-section h2 {
+  text-align: center;
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+}
+
+.ads-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.ad-card {
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow 0.2s;
+}
+
+.ad-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.ad-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.ad-body {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ad-body .price {
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.ad-body .title {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.ad-body .location {
+  font-size: 0.85rem;
+  color: #666666;
+}
+
+.ad-detail {
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.ad-detail .ad-image img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.ad-detail .info {
+  margin-top: 20px;
+  background-color: var(--card-bg);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.ad-detail .info h1 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.ad-detail .info .price {
+  font-size: 1.5rem;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.ad-detail .info .location {
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+  color: #555555;
+}
+
+.ad-detail .info .description {
+  margin-bottom: 20px;
+}
+
+.back-button {
+  padding: 10px 20px;
+  border: none;
+  background-color: var(--primary);
+  color: #ffffff;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.back-button:hover {
+  background-color: var(--secondary);
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: var(--primary);
+  color: #ffffff;
+  margin-top: 40px;
+}
